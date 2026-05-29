@@ -1,0 +1,10 @@
+apiVersion: serving.kserve.io/v1beta1
+kind: InferenceService
+metadata:
+  name: indent-greeting
+  namespace: ml-prod
+spec:
+  predictor:
+    serviceAccountName: sa-s3-access
+    sklearn:
+      storageUri: s3://greeting-model-s3/models/intent_model_20260528_141632.pkl
