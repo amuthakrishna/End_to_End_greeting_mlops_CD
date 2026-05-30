@@ -8,3 +8,10 @@ spec:
     serviceAccountName: sa-s3-access
     sklearn:
       storageUri: s3://greeting-model-s3/models/intent_model_20260530_034157.pkl
+      resources:
+        requests:
+          cpu: "100m"
+          memory: "512Mi"
+        limits:
+          cpu: "1"
+          memory: "1Gi"
